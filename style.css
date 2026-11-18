@@ -1,0 +1,346 @@
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+
+    font-family: 'Segoe UI', sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #ffe1ec,
+        #eadcff,
+        #dceeff
+    );
+
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* WATERMARK */
+body::before {
+    content: "A BEAUTIFUL BOND";
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%) rotate(-25deg);
+
+    font-size: clamp(35px, 9vw, 100px);
+    font-weight: 900;
+    letter-spacing: 8px;
+
+    color: rgba(255, 255, 255, 0.30);
+
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* FLOATING HEARTS */
+.floating-hearts span {
+    position: fixed;
+    bottom: -50px;
+
+    color: rgba(255, 79, 135, 0.25);
+    font-size: 30px;
+
+    animation: float 12s linear infinite;
+    pointer-events: none;
+}
+
+.floating-hearts span:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.floating-hearts span:nth-child(2) {
+    left: 25%;
+    animation-delay: 3s;
+}
+
+.floating-hearts span:nth-child(3) {
+    left: 45%;
+    animation-delay: 5s;
+}
+
+.floating-hearts span:nth-child(4) {
+    left: 65%;
+    animation-delay: 2s;
+}
+
+.floating-hearts span:nth-child(5) {
+    left: 80%;
+    animation-delay: 6s;
+}
+
+.floating-hearts span:nth-child(6) {
+    left: 92%;
+    animation-delay: 4s;
+}
+
+/* MAIN CARD */
+.container {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 570px;
+
+    padding: 40px 30px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(15px);
+
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 60px rgba(140, 80, 140, 0.18);
+}
+
+/* TOP LABEL */
+.top-label {
+    display: inline-block;
+
+    padding: 9px 18px;
+    border-radius: 30px;
+
+    background: #fff0f6;
+    color: #d94b87;
+
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* HEART */
+.heart {
+    font-size: 65px;
+    margin: 20px 0;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+/* HEADINGS */
+h1 {
+    font-size: 36px;
+    color: #d94b87;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    color: #8b6d91;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+h2 {
+    color: #76527e;
+    font-size: 24px;
+    margin-bottom: 18px;
+}
+
+.question {
+    color: #6f5a78;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.small-text {
+    color: #ad8baa;
+    font-size: 13px;
+}
+
+/* DIVIDER */
+.divider {
+    margin: 25px 0;
+    color: #e66b9e;
+}
+
+/* BUTTONS */
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+
+    min-height: 65px;
+    margin-top: 25px;
+}
+
+button {
+    padding: 14px 32px;
+
+    border: none;
+    border-radius: 35px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* YES BUTTON */
+#yesBtn {
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #ff5f9e,
+        #d9468b
+    );
+
+    box-shadow: 0 7px 18px rgba(217, 70, 139, 0.3);
+}
+
+#yesBtn:hover {
+    transform: translateY(-4px) scale(1.06);
+
+    box-shadow: 0 12px 25px rgba(217, 70, 139, 0.4);
+}
+
+/* NO BUTTON */
+#noBtn {
+    color: #775c83;
+    background: #eee4f5;
+    z-index: 10;
+}
+
+/* MESSAGE */
+#loveMessage {
+    margin-top: 35px;
+    padding: 30px 22px;
+
+    border-radius: 22px;
+
+    background: linear-gradient(
+        135deg,
+        #fff0f6,
+        #f4edff
+    );
+
+    border: 1px solid #f6d4e6;
+
+    color: #65536a;
+    line-height: 1.8;
+
+    animation: appear 0.8s ease;
+}
+
+#loveMessage h2,
+#loveMessage h3 {
+    color: #d94b87;
+    margin-bottom: 18px;
+}
+
+.message-heart {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+#loveMessage h3 {
+    margin-top: 25px;
+}
+
+.ending {
+    margin-top: 25px;
+    color: #d94b87;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* HIDDEN */
+.hidden {
+    display: none;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 30px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #b58aa9;
+}
+
+/* ANIMATIONS */
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 480px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 30px 18px;
+    }
+
+    h1 {
+        font-size: 29px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    #loveMessage {
+        padding: 22px 15px;
+    }
+
+    button {
+        padding: 12px 25px;
+    }
+
+}
